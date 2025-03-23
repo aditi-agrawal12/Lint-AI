@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Fira Code', monospace;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  background-color: #02182B; /* Deep ocean blue */
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+main .left, main .right {
+  height: 100%;
+  flex-basis: 50%;
+  border-radius: 0.7rem;
+  backdrop-filter: blur(20px) saturate(120%);
+  -webkit-backdrop-filter: blur(20px) saturate(120%);
+  border: 1px solid #1B4F72; /* Dark navy */
+}
+
+main .left {
+  background: rgba(3, 24, 43, 0.85); /* Darkest ocean blue */
+  position: relative;
+  padding: 1rem;
+}
+
+/* Code Editor */
+.left .code, .code pre, .code pre code {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  border-radius: 0.7rem;
+  background-color: transparent;
+  color: #d4d4d4; /* Default text */
+}
+
+/* Remove default white outline */
+.left .code textarea {
+  outline: none !important;
+  border: 1px solid #1B4F72; /* Dark navy border */
+  background: rgba(3, 24, 43, 0.85);
+  transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+/* Cursor Highlight Effect */
+.left .code textarea:focus {
+  border: 1px solid #1E90FF; /* Bright blue border */
+  box-shadow: 0 0 10px #1E90FF; /* Glowing effect */
+  background: rgba(10, 40, 65, 0.9); /* Slightly lighter ocean blue */
+}
+
+/* Buttons */
+main .left .review {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: #1E90FF; /* Deep blue */
+  padding: 0.5rem 2rem;
+  border-radius: 0.3rem;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 500;
+  user-select: none;
+  border: none;
+  transition: 0.3s ease-in-out;
+}
+
+main .left .review:hover {
+  background-color: #1565C0; /* Darker blue */
+}
+
+main .right {
+  background: rgba(5, 30, 50, 0.85);
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  overflow: auto;
+}
+
+/* Syntax Highlighting */
+.code pre code {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #1e90ff; /* Theme deep blue */
+  margin-bottom: 20px;
+  letter-spacing: 1.5px;
+  text-shadow: 1px 1px 4px rgba(30, 144, 255, 0.3);
+  border-bottom: 2px solid rgba(30, 144, 255, 0.7);
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+
+
+.keyword { color: #1E90FF; } /* Bright blue */
+.function { color: #87CEFA; } /* Sky blue */
+.string { color: #00FFFF; } /* Cyan */
+.comment { color: #5F9EA0; font-style: italic; } /* Muted teal */
+.number { color: #7FFFD4; } /* Aquamarine */
+.variable { color: #ADD8E6; } /* Light blue */
