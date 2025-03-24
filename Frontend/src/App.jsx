@@ -20,7 +20,7 @@ const [review, setreview] = useState(``)
   }, []);
 
   async function reviewCode(){
-    const response = await axios.post('http://localhost:3000/ai/get-review',{code})  
+    const response = await axios.post('https://lint-ai.onrender.com/ai/get-review',{code})  
     setreview(response.data)
 
   }
